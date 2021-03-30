@@ -1,0 +1,211 @@
+{
+  "definitions": {
+    "ZAPI_RETURN_WP": {
+      "kind": "service"
+    },
+    "ZAPI_RETURN_WP.I_ReturnsRefundExtent": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ReturnsRefundExtent": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReturnsRefundExtent_Text": {
+          "type": "cds.String",
+          "length": 60
+        }
+      }
+    },
+    "ZAPI_RETURN_WP.ZC_RETRUNWORK_WP": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "DocRelationshipUUID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "SubsequentDocument": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SubsequentDocumentItem": {
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "SubsequentDocumentCategory": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BillingDocument": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "BillingDocumentItem": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "Material": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "MaterialName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Customer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessPartner": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessPartnerFullName": {
+          "type": "cds.String",
+          "length": 81
+        },
+        "FirstName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "LastName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "BusinessPartnerBank": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "BankIdentification": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BankCountryKey": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "BankName": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "BankNumber": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "SWIFTCode": {
+          "type": "cds.String",
+          "length": 11
+        },
+        "BankControlKey": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "BankAccountHolderName": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "BankAccountName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ValidityStartDate": {
+          "type": "cds.Timestamp"
+        },
+        "ValidityEndDate": {
+          "type": "cds.Timestamp"
+        },
+        "IBAN": {
+          "type": "cds.String",
+          "length": 34
+        },
+        "IBANValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "BankAccount": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "BankAccountReferenceText": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "CollectionAuthInd": {
+          "type": "cds.Boolean"
+        },
+        "BusinessPartnerExternalBankID": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "BPBankDetailsChangeDate": {
+          "type": "cds.Timestamp"
+        },
+        "BPBankDetailsChangeTargetID": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BPBankIsProtected": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CityName": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "InvoiceDocument": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InvoiceDocumentItem": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReturnDocument": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReturnDocumentItem": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReturnReason": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReturnsRefundExtend": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "FollowUpActivity": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "MaterialHasBeenReceived": {
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "ZAPI_RETURN_WP.ZI_ReturnReason_vdh": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ReturnReason": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReturnReasonName": {
+          "type": "cds.String",
+          "length": 60
+        }
+      }
+    }
+  }
+}
