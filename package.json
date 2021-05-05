@@ -1,34 +1,30 @@
 {
-  "name": "testConsumeService",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^4",
-    "express": "^4"
-  },
-  "devDependencies": {
-    "sqlite3": "5.0.0"
-  },
-  "scripts": {
-    "start": "cds run"
-  },
-  "cds": {
-    "requires": {
-      "ZAPI_RETURN_WP": {
-        "kind": "odata",
-        "model": "srv/external/ZAPI_RETURN_WP",
-        "credentials": {
-          "destination": "ZAPI_RETURN_WP"
-      }
-     }
+    "name": "testconsumeservice",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^4",
+        "express": "^4"
     },
-     "s4": {
-        "kind": "rest",
-        "credentials": {
-          "destination": "abap-s4-basic"
+    "devDependencies": {
+        "sqlite3": "5.0.2"
+    },
+    "scripts": {
+        "start": "cds run"
+    },
+    "cds": {
+        "requires": {
+            "metadata": {
+                "kind": "odata",
+                "model": "srv/external/metadata",
+                "credentials": {
+                    "destination": "abap-ewm-basic",
+                    "path": "/sap/opu/odata/sap/ZTEST_DEMO_SRV?sap-client=001"
+                }
+            }
         }
-      }
+    }
 }

@@ -1,0 +1,56 @@
+{
+  "definitions": {
+    "metadata": {
+      "kind": "service"
+    },
+    "metadata.ZEW_ODOSet": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "OrderNo": {
+          "key": true,
+          "type": "cds.String",
+          "length": 35
+        },
+        "Itemno": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Productno": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Qty": {
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 14
+        },
+        "Uom": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "StatusGi": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "StatusPick": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "StatusWm": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "StatusCompl": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "RefitemnoSo": {
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    }
+  }
+}
