@@ -6,23 +6,31 @@
     "license": "UNLICENSED",
     "private": true,
     "dependencies": {
+        "@sap/audit-logging": "^5.0.0",
         "@sap/cds": "^4",
-        "express": "^4"
+        "@sap/cds-odata-v2-adapter-proxy": "^1.6.2",
+        "@sap/xssec": "^3.2.0",
+        "express": "^4",
+        "passport": "^0.4.1"
     },
     "devDependencies": {
         "sqlite3": "5.0.2"
     },
     "scripts": {
-        "start": "cds run"
+        "start": "cds run",
+        "start-local": "export NODE_ENV='test' && node srv/server.js"
     },
     "cds": {
         "requires": {
+            "uaa": {
+                "kind": "xsuaa"
+            },
             "metadata": {
                 "kind": "odata",
                 "model": "srv/external/metadata",
                 "credentials": {
                     "destination": "abap-ewm-basic",
-                    "path": "/sap/opu/odata/sap/ZTEST_DEMO_SRV?sap-client=001"
+                    "path": "/sap/opu/odata/sap/ZTEST_DEMO_SRV"
                 }
             }
         }

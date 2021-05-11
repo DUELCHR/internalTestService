@@ -1,0 +1,7 @@
+{
+  "xsappname": "testconsumeservice",
+  "tenant-mode": "dedicated",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}

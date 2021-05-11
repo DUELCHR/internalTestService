@@ -1,0 +1,61 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = testconsumeservice
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: testconsumeservice
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: testconsumeservice-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   requires:
+    # Resources extracted from CAP configuration
+    - name: testconsumeservice-xsuaa
+    - name: testconsumeservice-destination
+    - name: testconsumeservice-connectivity
+   provides:
+    - name: srv-api      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+
+
+resources:
+ # services extracted from CAP configuration
+ # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
+# ------------------------------------------------------------
+ - name: testconsumeservice-xsuaa
+   type: org.cloudfoundry.managed-service
+   parameters:
+    service-name: testconsumeservice-xsuaa
+    service-plan: application
+    service: xsuaa
+ - name: testconsumeservice-destination
+   type: org.cloudfoundry.managed-service
+   parameters:
+    service-name: testconsumeservice-destination
+    service-plan: lite
+    service: destination
+ - name: testconsumeservice-connectivity
+   type: org.cloudfoundry.managed-service
+   parameters:
+    service-name: testconsumeservice-connectivity
+    service-plan: lite
+    service: connectivity    
+
+
+
+
